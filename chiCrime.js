@@ -108,12 +108,12 @@ d3.json("ChicagoData.json", function(error, json) {
           tooltip.transition()
                  .duration(200)
                  .style("opacity", .9)
-                 TooltipText(d,"comName","population","crimePerK")
+                 TooltipText(d,"comName","population","crimePerK", "percentbelowpoverty")
                     return tooltip.style("display","inline");
         })
     //place toolTip in one location
     .on("mousemove", function(d){
-        return tooltip.style("top", (height-450)+"px").style("left",(width-930)+"px");
+        return tooltip.style("top", (height-420)+"px").style("left",(width-960)+"px");
     })
     //toolTip fade out
     .on("mouseout", function(d){
@@ -134,6 +134,7 @@ d3.json("ChicagoData.json", function(error, json) {
 
 function clearLabel(d, name){
   svg.remove("text")
+      .text(d.properties["comName"])
       .attr("x", 700)
       .attr("y", 100)
       .text(d.properties["comName"])
@@ -161,9 +162,10 @@ function dimMap(data, map, dim){
     }
 
 //Define the conent of the ToolTip
-function TooltipText(d,name,pop,crime){
+function TooltipText(d,name,pop,crime, poverty){
     tooltip.html("<center><b>"+d.properties[name]+"</b></center><br/>"
                         +"Population : " + d.properties[pop]+" people</em>"+"<br/>"
+                        +"Households below poverty level: " + d.properties[poverty] + "%</em>" + "<br/>"
                         +"Crime: "+d.properties[crime]+"</em><br/>"
                         +'<div id="help">*Crime Rate Per 1000 Residents<div>'
                         );
