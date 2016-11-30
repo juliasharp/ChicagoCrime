@@ -17,10 +17,6 @@ area{
   fill:black;
 }
 
-.neighborhood:hover area{
-  fill: orange;
-}
-
 .key path {
   display: none;
 }
@@ -29,7 +25,7 @@ area{
   font-weight: bold;
 }
 
-#footer{
+#container{
   background: rgb(241, 241, 241);
   border-top: 1px solid rgb(222, 222, 222);
   margin-top: -2px;
@@ -41,30 +37,19 @@ area{
   margin-bottom: 25px;
 }
 
-#footer .container{
-  position: relative;
-  max-width: 1300px;
-  max-width: 1300px;
-
+#column-left{
+  float: left;
+  width: 333px;
 }
 
-.column-left{
-  width:33%;
-  left: 0;
-  positon: absolute;
+#column-center{
+  float: left;
+  width: 333px;
 }
 
-.column-center{
-  width: 34%;
-  margin-left: 33%;
-  positon: absolute;
-}
-
-.column-right{
-  width: 33%;
-  right: 0;
-  position: absolute;
-
+#column-right{
+  float: left;
+  width: 333px;
 }
 
 
