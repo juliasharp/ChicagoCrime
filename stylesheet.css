@@ -1,0 +1,85 @@
+svg {
+  font: 10px sans-serif;
+}
+
+.neighborhood {
+    stroke: #777;
+    stroke-linejoin: round;
+    stroke-width: 1.5;
+}
+
+#neighborhood-label{
+   font: 35px sans-serif;
+   fill: rgba(128, 128, 128, 0.86);
+}
+
+area{
+  fill:black;
+}
+
+.neighborhood:hover area{
+  fill: orange;
+}
+
+.key path {
+  display: none;
+}
+
+.caption {
+  font-weight: bold;
+}
+
+#footer{
+  background: rgb(241, 241, 241);
+  border-top: 1px solid rgb(222, 222, 222);
+  margin-top: -2px;
+  padding-top: 0px;
+  padding-bottom: 5px;
+  padding-left: 25px;
+  margin-left: 85px;
+  margin-right: 85px;
+  margin-bottom: 25px;
+}
+
+#footer .container{
+  position: relative;
+  max-width: 1300px;
+  max-width: 1300px;
+
+}
+
+.column-left{
+  width:33%;
+  left: 0;
+  positon: absolute;
+}
+
+.column-center{
+  width: 34%;
+  margin-left: 33%;
+  positon: absolute;
+}
+
+.column-right{
+  width: 33%;
+  right: 0;
+  position: absolute;
+
+}
+
+
+.tooltip {
+    position: absolute;				
+    width: auto;
+    height: auto;
+    font: 14px sans-serif;
+    background: white;		
+    border-radius: 5px;			
+    pointer-events: none;
+    
+}
+
+
+
+
+
