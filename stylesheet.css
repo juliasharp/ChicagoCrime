@@ -8,9 +8,25 @@ svg {
     stroke-width: 1.5;
 }
 
+.neighborhood:hover{
+  fill: black;
+}
+
+.neighborhood.active{
+  fill: black;
+}
+
 #neighborhood-label{
    font: 35px sans-serif;
    fill: rgba(128, 128, 128, 0.86);
+}
+
+.bars{
+  
+}
+
+.bars:hover{
+  fill: brown;
 }
 
 area{
@@ -23,6 +39,24 @@ area{
 
 .caption {
   font-weight: bold;
+}
+
+hideText{
+    visibility: hidden;
+}
+
+div#help{
+  position: relative;
+  left: 50px;
+  bottom: -3px;
+  font-size: 10px;
+  
+
+}
+
+em{
+  font-style: normal;
+  float: right;
 }
 
 #container{
@@ -52,6 +86,10 @@ area{
   width: 333px;
 }
 
+#legend{
+  font: Times;
+}
+
 
 .tooltip {
     position: absolute;				
@@ -62,6 +100,19 @@ area{
     border-radius: 5px;			
     pointer-events: none;
     
+}
+
+.axis path,
+  .axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text{
+    font: Times;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 
