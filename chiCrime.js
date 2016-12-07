@@ -301,7 +301,7 @@ function dimMap(data, map, name, dim){
 //Define the conent of the ToolTip
 function TooltipText(d,name,pop,crime, poverty){
     tooltip.html("<center><b>"+d.properties[name]+"</b></center><br/>"
-                        +"Population <hideText> __di _</hideText> :" + "<em>"  + d.properties[pop]+ "</em><br/>"
+                        +"Population <hideText> __di ___</hideText> :" + "<em>"  + d.properties[pop]+ "</em><br/>"
                         +"Below Poverty Level: " + "<em> " + "<hideText>_____</hideText>" + d.properties[poverty] + "</em>" + "<br/>"
                         +"Crime <hideText> ___________</hideText>: " + "<em>" + "<hideText>_____</hideText>" + d.properties[crime] + "</em><br/>"
                         +'<div id="help">*Crime Rate Per 1000 Residents<div>'
