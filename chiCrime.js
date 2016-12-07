@@ -268,9 +268,11 @@ function clearLabel(d, name){
       .attr("id", "neighborhood-label")
       .text(" ")
 
-  svg2.selectAll('bar').data([]).exit().remove()
+  svg2.selectAll('rect').data([]).exit().remove()
       .attr("classed", "bar")
       .attr("class", "bars")
+
+  svg2.selectAll("g").remove("axis")
 
 }
 
