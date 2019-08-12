@@ -16,7 +16,7 @@ var color = d3.scale.threshold()
     .range(colorbrewer.Reds[8]);
 
 var graph_color = d3.scale.ordinal()
-    .range(["#98abc5", "#6b486b", "#d0743c"])
+    .range(["#a1d5ff", "#6EBEFF", "#0890FF"])
 
 //position encoding for the key only.
 var x = d3.scale.linear()
@@ -42,8 +42,11 @@ var parentSVG = d3.select("body")
 //svg for map
 var svg = d3.select("#parentSVG")
     .append("svg")
+    .attr("x",100)
+    .attr("y", 40)
     .attr("width", (width-100))
     .attr("height", height)
+    .attr("class", "map")
     .on("click", reset)
 
 var g = svg.append("g")
@@ -51,15 +54,18 @@ var g = svg.append("g")
 //svg for bar graph
 var svg2 = d3.select("#parentSVG")
     .append("svg")
-    .attr("x",width-100)
+    .attr("x",width+200)
+    .attr("y", 350)
     .attr("width", width-100)
-    .attr("height", height);
+    .attr("height", height)
+    .attr("class", "graph")
 
 //space for tooltip
 var tooltip = d3.select("body").append("div")
     .attr("class","tooltip")
     .style("position", "absolute")
-    .style("display", "none");
+    .style("display", "none")
+    .style("font-size", "16px");
 
 
 //Draw Legend
@@ -127,7 +133,7 @@ d3.json("ChicagoData.json", function(error, json) {
 
    //calls the projection
    var path = d3.geo.path().projection(projection);
-
+   var clickFlag = false;
     //draw neighborhood boundaries and use toolTip
     svg.selectAll(".features")
        .data(topojson.feature(json, json.objects.features).features)
@@ -154,9 +160,13 @@ d3.json("ChicagoData.json", function(error, json) {
         .duration(500)
         .style("opacity", 0);
     })
+    .on('click', function(d){
+          return tooltip.style("top", (height-340)+"px").style("left",(width-690)+"px");
+      })
     .on("click", click)
 
 });
+
 
 function click(d){
 
@@ -172,7 +182,8 @@ function click(d){
   communityLabel(d);
   appendLegend(Cdata, svg2);
   makeGraph(Cdata, svg2, d.properties["violentCrimes"], d.properties["homocideAssault"], d.properties["firearmRelated"])
-}
+
+    }
 
 function reset(){
 
@@ -298,13 +309,13 @@ function dimMap(data, map, name, dim){
          })
     }
 
-//Define the conent of the ToolTip
+//Define the content of the ToolTip
 function TooltipText(d,name,pop,crime, poverty){
     tooltip.html("<center><b>"+d.properties[name]+"</b></center><br/>"
                         +"Population <hideText> __di ___</hideText> :" + "<em>"  + d.properties[pop]+ "</em><br/>"
                         +"Below Poverty Level: " + "<em> " + "<hideText>_____</hideText>" + d.properties[poverty] + "</em>" + "<br/>"
                         +"Crime <hideText> ___________</hideText>: " + "<em>" + "<hideText>_____</hideText>" + d.properties[crime] + "</em><br/>"
-                        +'<div id="help">*Crime Rate Per 1000 Residents<div>'
+                        +'<div id="help">*Crime Rate Per 1000 Residents</div>'
                         );
 }
 
