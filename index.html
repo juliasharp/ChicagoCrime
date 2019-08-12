@@ -20,35 +20,21 @@
   </head>
     
   <body>
-    <h1 style = "text-align:center; color:#000000"><bold>Crime in Chicago Neighborhoods</bold></h1>
-    <p><center><p> Crime in Chicago repeatedly ranks in the top 10 in the nation. Much of that is concentrated in a small part of the city. <br> Many of the communities with the highest crime rates, also have the highest concentration of people living in poverty. <br>Fuller Park consistently has the highest crime rates at about 1 crime per 20 people, as well as about half of the community living in poverty. </p> </center> </p>
-    <!-- D3.js code -->
-    <script type="text/javascript" src="chiCrime.js"></script> 
-
-
-    <div id="container">
-        <h3> Created by: </h3> Julia Sharp in collaboration with Ryan Brounley and Shobhit Maheshwari <br>
-                <p> CMPS165, Data Programming for Visualization, Fall 2016 </p>
-        <div id="column-left">
-              <h3> Files: </h3>
-                    <p> index.html </p>
-                    <p> chiCrime.js </p>
-                    <p> stylesheet.css </p>
-                    <p> ChicagoData.json </p>
-        </div>
-        <div id ="column-center">
-            <h3> Code Sources: </h3>
-                <a href = "https://bl.ocks.org/mbostock/5562380" >California Population Density- Mike Bostock </a>
-                <br>
-                <a href = "http://sureshlodha.github.io/Projects_Spring16/projects/NYvsChicago/index.html" > N.Y. vs Chicago</a>
-                <br>
-                <a href = "http://rmoncayo28.github.io/CMPS165/"> California's Quality of Life </a>
-                <br>
-        </div>
-        <div id = "column-right">
-            <h3> Data Sources: </h3>
-                <a href = "https://data.cityofchicago.org/browse?sortBy=relevance&utf8=%E2%9C%93&page=1" > City of Chicago Data Portal </a>
-        </div>
+    <div id="page-body">
+    <div class="page-title">
+        <h1>Visualizing Crime in Chicago Neighborhoods</h1>
+        <p class="body-text"> Crime in Chicago consistently ranks top 10 in the nation. Much of that is concentrated in a small part of the city. Many of the communities with the highest crime rates, also have the highest concentration of people living in poverty. Fuller Park, fore example, consistently has the highest crime rates at about 1 crime per 20 people, with about half of the community living in poverty.</p>
     </div>
-  </body> 
+    <!-- D3.js code -->
+
+    <script type="text/javascript" src="chiCrime.js"></script>
+
+
+    </div>
+    <footer id="footer">
+        <div class="footer-text">
+            <p class="about-slogan"> CREATED BY <b>JULIA SHARP</b> <span class="dot"> &centerdot; </span> DATA PROGRAMMING & VISUALIZATION <span class="dot"> &centerdot; </span> UNIVERSITY OF CALIFORNIA, SANTA CRUZ<p>
+        </div>
+    </footer>
+  </body>
 </html>
