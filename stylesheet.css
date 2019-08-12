@@ -2,18 +2,67 @@ svg {
   font: 10px sans-serif;
 }
 
+body{
+    font-family: 'Helvetica', sans-serif; 
+    overflow-x: hidden !important;
+}
+
+#page-body{
+    position: relative;
+}
+.page-title{
+ position: absolute;
+ right: 100px;
+ width: 575px;
+ margin-top: 40px;
+ text-align: center; 
+ color: black;    
+}
+
+.footer-text{
+    font-family: 'Helvetica', sans-serif; 
+    font-size: 14px;
+    font-weight: 400;
+    left: 10px;
+}
+
+.body-text{
+  font-size: 17px;
+  line-height: 1.6;
+  opacity: 0.6;
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#parentSVG{
+   position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.graph{
+    position: absolute;
+    bottom: 0;
+}
+
 .neighborhood {
     stroke: #777;
     stroke-linejoin: round;
     stroke-width: 1.5;
 }
 
-.neighborhood:hover{
-  fill: black;
+path.neighborhood:hover{
+  opacity: 0.5 !important;
 }
 
 .neighborhood.active{
-  fill: black;
+  fill: grey;
 }
 
 #neighborhood-label{
@@ -26,7 +75,7 @@ svg {
 }
 
 .bars:hover{
-  fill: brown;
+  fill: #FF933B;
 }
 
 area{
@@ -59,16 +108,16 @@ em{
   float: right;
 }
 
-#container{
-  background: rgb(241, 241, 241);
-  border-top: 1px solid rgb(222, 222, 222);
+#footer{
   margin-top: -2px;
   padding-top: 0px;
   padding-bottom: 5px;
   padding-left: 25px;
-  margin-left: 85px;
   margin-right: 85px;
   margin-bottom: 25px;
+  position: absolute;
+  bottom: 0;
+  top: 800px;
 }
 
 #column-left{
