@@ -16,7 +16,7 @@ var color = d3.scale.threshold()
     .range(colorbrewer.Reds[8]);
 
 var graph_color = d3.scale.ordinal()
-    .range(["#a1d5ff", "#6EBEFF", "#0890FF"])
+    .range(["#0890FF", "#6EBEFF", "#a1d5ff"])
 
 //position encoding for the key only.
 var x = d3.scale.linear()
@@ -32,6 +32,7 @@ var legend_xAxis = d3.svg.axis()
     .tickFormat(function(d){ return (d)})
 
 //an svg to append both svg's
+var chartDiv = document.getElementById("chart");
 var parentSVG = d3.select("body")
     .attr("align","center")
     .append("svg")
@@ -43,7 +44,7 @@ var parentSVG = d3.select("body")
 var svg = d3.select("#parentSVG")
     .append("svg")
     .attr("x",100)
-    .attr("y", 40)
+    .attr("y", 0)
     .attr("width", (width-100))
     .attr("height", height)
     .attr("class", "map")
@@ -54,8 +55,8 @@ var g = svg.append("g")
 //svg for bar graph
 var svg2 = d3.select("#parentSVG")
     .append("svg")
-    .attr("x",width+200)
-    .attr("y", 350)
+    .attr("x",width+50)
+    .attr("y", 315)
     .attr("width", width-100)
     .attr("height", height)
     .attr("class", "graph")
@@ -127,7 +128,7 @@ d3.json("ChicagoData.json", function(error, json) {
    var projection = d3.geo.albers()
       .center([8.25, 41.88205])
       .parallels([40, 45])
-      .scale(100000)
+      .scale(80000)
       .rotate([92.35, .5, -4])
       .translate([((width / 2)-70), ((height / 2)-50)]);
 
