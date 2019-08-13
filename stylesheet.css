@@ -7,14 +7,21 @@ body{
     overflow-x: hidden !important;
 }
 
+#chart {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+
 #page-body{
     position: relative;
 }
 .page-title{
  position: absolute;
- right: 100px;
+ right: 50px;
  width: 575px;
- margin-top: 40px;
  text-align: center; 
  color: black;    
 }
@@ -117,7 +124,7 @@ em{
   margin-bottom: 25px;
   position: absolute;
   bottom: 0;
-  top: 800px;
+  top: 750px;
 }
 
 #column-left{
@@ -163,8 +170,3 @@ em{
     font-size: 12px;
     font-weight: bold;
 }
-
-
-
-
-
